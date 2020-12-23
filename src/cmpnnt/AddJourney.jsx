@@ -42,8 +42,6 @@ function AddJourney() {
             const data = response.data.data;
             console.log(data);
             alert("Journey Berhasil di tambahkan");
-            title.target.value = "";
-
         })
             .catch(err => { console.log(err); alert("journey gagal ditambahkan") }).then(res => console.log(res));
 
