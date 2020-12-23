@@ -45,7 +45,7 @@ function Detail({ match }) {
                             </Row>
                             <Row>
                                 <Col>
-                                    {detail.description}
+                                    <div dangerouslySetInnerHTML={{ __html: detail.description }} />
                                 </Col>
                             </Row>
                         </Container>
