@@ -1,0 +1,56 @@
+//peserta
+npx sequelize-cli model:generate --name Peserta --attributes kode:string,modulId:integer,clientId:integer,projectId:integr,entryDate:date,testDate:date,expiryDate:date,status:boolean,login:boolean,tglLahir:dateonly,tmptLahir:string,alamat:string,telp:string,agama:string
+
+//client
+npx sequelize-cli model:generate --name Client --attributes tipe:string,nama:string,email:string,userId:integer,status:boolean,kopId:integer
+
+//user
+npx sequelize-cli model:generate --name User --attributes userName:string,password:string,admin:boolean
+
+//kop laporan
+npx sequelize-cli model:generate --name KpLaporan --attributes nama:string
+
+//hrd
+npx sequelize-cli model:generate --name Hrd --attributes pesertaId:integer,posisiLamar:string,kotaPenempatan:string,suku:string,perokok:boolean
+
+//progress
+npx sequelize-cli model:generate --name Progress --attributes pesertaId:integer,urutan:integer,status:boolean,waktu:time
+
+//jawaban
+npx sequelize-cli model:generate --name Jawaban --attributes pesertaId:integer,tesId:integer,nomor:integer,jawaban:string
+
+//uruta tes
+npx sequelize-cli model:generate --name UrutanTes --attributes modulId:integer,tesId:integer,urutan:integer
+
+//tes
+npx sequelize-cli model:generate --name Tes --attributes nama:string,kategori:enum('essay', 'pg'),waktu:time
+
+//hasil
+npx sequelize-cli model:generate --name Hasil --attributes tesId:integer,pesertaId:integer,nama:string,rs:integer,ws:integer,
+
+//soal
+npx sequelize-cli model:generate --name Soal --attributes tesId:integer,nomor:integer,soal:string,kunci:string
+
+//rekruitment
+npx sequelize-cli model:generate --name Rekruitment --attributes pesertaId:integer,kotaPelaksanaan:string,posisiDituju:string,pengalamanKerja:string
+
+//rekruitment self assesment
+npx sequelize-cli model:generate --name RekSelfAssesment --attributes pesertaId:integer,rek1:string,rek2:string,rek3:string,rek4:string,rek5:string,rek6:string,rek7:string,rek8:string,rek9:string,rek9_1:string,rek9_2:string,rek10:string,rek11:string,rek12:string,rek13:string,rek14:string,rekKomentar:string
+
+//pelajar
+npx sequelize-cli model:generate --name Pelajar --attributes pesertaId:integer,sekolahId:integer,pendidikan:String,kelas:string,jurusan:string,jurusanPilihan1:string,jurusanPilihan2:string,jurusanPilihan3:string,namaAyah:string,namaIbu:string,pekAyah:string,pekIbu:string,alamatOrtu:string,telpOrtu:string,kodeIjazah:string
+
+//sekolah
+npx sequelize-cli model:generate --name Sekolah --attributes nama:string,kategori:string,alamat:string
+
+//pelajar self assesment
+npx sequelize-cli model:generate --name PelajarSelfAssesment --attributes pesertaId:integer,c1_1:string,c1_2:string,c1_3:string,c1_4:string,c1_5:string,c1_6:string,c1_7:string,c1_8:string,c2_1:string,c2_2:string,c2_3:string,c2_4:string,c2_5:string,c2_6:string,c2_7:string,c2_8:string,c2_9:string,c2_10:string,c2_11:string,c2_12:string,c3_hobby:string,c4_1:string,c4_2:string,c4_3:string,c4_4:string,c5_musik:string,c6_1:string,c6_2:string,c6_3:string,c6_4:string,c6_5:string,c6_6:string,c6_7:string
+
+//modul
+npx sequelize-cli model:generate --name Modul --attributes nama:string
+
+//credit
+npx sequelize-cli model:generate --name Credit --attributes clientId:integer,modulId:integer,tglTopUp:date,total:integer,terpakai:integer,approve:boolean
+
+//harga modul
+npx sequelize-cli model:generate --name hargaModul --attributes clientId:integer,modulId:integer,harga:integer
